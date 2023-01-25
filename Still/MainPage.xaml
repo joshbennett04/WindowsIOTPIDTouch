@@ -1,0 +1,59 @@
+﻿<Page
+    x:Class="Still.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    DataContext="ViewModel">
+    <Grid>
+        <Image Source="/Assets/black-1072366_1920.jpg" Stretch="Fill"/>
+
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="5*"/>
+                <ColumnDefinition Width="5*"/>
+            </Grid.ColumnDefinitions>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height=".2*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <TextBlock x:Name="txtState" 
+                           FontFamily="/Assets/Fonts/SheilaCrayon-1vWg.ttf#Sheila Crayon" 
+                           DataContext="ViewModel"
+                           Margin="10,0,0,0"
+                           Text="{x:Bind ViewModel.State, Mode=OneWay}" 
+                           Foreground="White" 
+                           FontSize="20" 
+                           Grid.Row="0"/>
+                <TextBlock x:Name="txtTemp" 
+                           FontFamily="/Assets/Fonts/SheilaCrayon-1vWg.ttf#Sheila Crayon" 
+                           DataContext="ViewModel" 
+                           Margin="40,0,0,0"
+                           VerticalAlignment="Center" 
+                           Text="{x:Bind ViewModel.TempString, Mode=OneWay}"
+                           Foreground="White" FontSize="170" 
+                           Grid.Row="1"/>
+            </Grid>
+            <Grid Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height=".2*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <TextBlock x:Name="txtPreset" 
+                           FontFamily="/Assets/Fonts/SheilaCrayon-1vWg.ttf#Sheila Crayon" 
+                           DataContext="ViewModel" 
+                           Text="{x:Bind ViewModel.Preset, Mode=OneWay}"
+                           Margin="0,0,10,10"
+                           Foreground="White" 
+                           FontSize="60" 
+                           VerticalAlignment="Top"
+                           HorizontalAlignment="Right"
+                           Grid.Row="0"
+                           Tapped="Preset_Tapped"/>
+                <Image x:Name="stillImage" Source="/Assets/0.png" Grid.Row="1"/>
+            </Grid>
+        </Grid>
+    </Grid>
+</Page>

@@ -1,0 +1,8 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/Still/obj/x86/Debug
+/Still/bin/ARM/Debug
+/Still/obj/ARM/Debug
+/Still/obj
